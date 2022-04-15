@@ -80,6 +80,8 @@ class CountryCodePicker extends StatefulWidget {
   /// [BoxDecoration] for the flag image
   final Decoration? flagDecoration;
 
+  final Color cursorColor;
+
   /// An optional argument for injecting a list of countries
   /// with customized codes.
   final List<Map<String, String>> countryList;
@@ -116,6 +118,7 @@ class CountryCodePicker extends StatefulWidget {
     this.showDropDownButton = false,
     this.dialogSize,
     this.dialogBackgroundColor,
+    required this.cursorColor,
     this.closeIcon = const Icon(Icons.close),
     this.countryList = codes,
     Key? key,
@@ -309,6 +312,7 @@ class CountryCodePickerState extends State<CountryCodePicker> {
                 barrierColor: widget.barrierColor,
                 hideSearch: widget.hideSearch,
                 closeIcon: widget.closeIcon,
+                cursorColor: widget.cursorColor,
                 flagDecoration: widget.flagDecoration,
               ),
             ),
@@ -348,6 +352,7 @@ class CountryCodePickerState extends State<CountryCodePicker> {
             barrierColor: widget.barrierColor,
             hideSearch: widget.hideSearch,
             closeIcon: widget.closeIcon,
+            cursorColor: widget.cursorColor,
           ),
         ),
       ).then((e) {
